@@ -1,10 +1,10 @@
 {%- comment -%}
     On 404 pages, Shopify isn't pulling in our nav links.
     To fix the bug we use the linklist object to access the
-    theme editor menu's links.
+    theme editor menu's links.`
 {%- endcomment -%}
 {% if section.settings.menu.links == blank %}
-    {% assign main_menu_linklist = linklist[section.settings.menu].links %}
+    <!-- {% assign main_menu_linklist = linklists[section.settings.menu].links %} -->
 {% else %}
     {% assign main_menu_linklist = section.settings.menu.links %}
 {% endif %}
