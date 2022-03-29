@@ -31,12 +31,16 @@
                     {% if article.image != blank %}
                         <img class="w-full h-80 md:h-96 object-cover object-center p-5" src="{{ article.image | img_url: 'large' }}" alt="{{ article.image.alt }}">
                     {% else %}
-                        {% assign placeholder_image = 'lifestyle-2' %}
+                        {% assign placeholder_image = 'lifestyle-1' %}
                         {{ placeholer_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
                     {% endif %}
                 </div>
             {% when 'article_content' %}
-                <div>{{ article.content }}</div>
+                <div class="flex items-center justify-center">
+                    <div class="max-w-7xl">
+                        {{ article.content }}
+                    </div>
+                </div>
             {% else %}
         {% endcase %}
     {% endfor %}
